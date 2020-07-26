@@ -1,5 +1,4 @@
 import {GET_USER, SET_USER, TOGGLE_PROGRESS} from "./constants";
-import {getUser} from "./actions";
 
 export type User = {
     title: string

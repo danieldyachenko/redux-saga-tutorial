@@ -3,13 +3,13 @@ import {GET_USER} from "./constants";
 import {setUser, toggleProgress} from "./actions";
 import {GetUser} from "./types";
 
-export function* getUserAsync(action: GetUser) {
+function* getUserAsync(action: GetUser) {
     try {
         yield put(toggleProgress(true))
         const response  =  yield call(() => fetch('https://randomuser.me/api/'))
         const json = yield call(() => response.json())
         const user = json.results[0].name
-        yield delay(2000)
+        // yield delay(2000)
         yield put(toggleProgress(false))
         yield put(setUser(user))
     } catch (err) {

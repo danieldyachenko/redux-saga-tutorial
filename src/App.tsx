@@ -12,8 +12,8 @@ export default function App() {
 
     return (
         <div>
-            <h2>{!isProgress ? `${user.title} ${user.first} ${user.last}` : 'Wait!'}</h2>
-            <button onClick={() => dispatch(getUser())}>
+            <h2>{!isProgress ? `${user.title} ${user.first} ${user.last}` : 'Loading...'}</h2>
+            <button onClick={() => dispatch(getUser())} disabled={isProgress}>
                 Get name
             </button>
         </div>
